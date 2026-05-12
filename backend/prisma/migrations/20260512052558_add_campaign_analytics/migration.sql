@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "campaigns" ADD COLUMN     "clicks" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "content" TEXT,
+ADD COLUMN     "emailsSent" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "opens" INTEGER NOT NULL DEFAULT 0;
