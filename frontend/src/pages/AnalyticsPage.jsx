@@ -38,7 +38,7 @@ export function AnalyticsPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/analytics",
+          "${import.meta.env.VITE_API_URL}/api/analytics",
           {
             headers: {
               Authorization: `Bearer ${token}`,
