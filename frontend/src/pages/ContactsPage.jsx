@@ -31,7 +31,7 @@ export function ContactsPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/contacts",
+          "${import.meta.env.VITE_API_URL}/api/contacts",
           {
             headers: {
               Authorization: `Bearer ${token}`,
