@@ -31,7 +31,7 @@ export  function TemplatesPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/templates",
+          "${import.meta.env.VITE_API_URL}/api/templates",
           {
             headers: {
               Authorization: `Bearer ${token}`,
