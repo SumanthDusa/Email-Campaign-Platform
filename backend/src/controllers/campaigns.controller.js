@@ -212,11 +212,11 @@ async function sendCampaign(
           );
 
       const unsubscribeUrl =
-        `http://localhost:5000/unsubscribe/${contact.id}`;
+        `${process.env.BACKEND_URL}/unsubscribe/${contact.id}`;
 
       const trackingPixel = `
         <img
-          src="http://localhost:5000/track/${campaign.id}/${contact.id}"
+          src="${process.env.BACKEND_URL}/track/${campaign.id}/${contact.id}"
           width="1"
           height="1"
           style="display:none"
