@@ -29,7 +29,7 @@ export function DashboardPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/analytics",
+          "import.meta.env.VITE_API_URL",
           {
             headers: {
               Authorization: `Bearer ${token}`,
