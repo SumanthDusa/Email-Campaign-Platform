@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import { Toaster } from "react-hot-toast";
-import RegisterPage from "./pages/RegisterPage";
+
 import { DashboardPage } from "./pages/DashboardPage";
 import { LoginPage } from "./pages/LoginPage";
 import { ContactsPage } from "./pages/ContactsPage";
@@ -33,13 +33,6 @@ function App() {
   return (
     <>
       <Toaster position="top-right" />
-
-      <Routes>
-
-        <Route 
-          path="/register" 
-          element={<RegisterPage />} 
-        />
         
         <Route
           path="/login"
