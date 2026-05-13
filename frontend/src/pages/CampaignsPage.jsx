@@ -70,7 +70,7 @@ export function CampaignsPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/contact-lists",
+          '${import.meta.env.VITE_API_URL}/api/contact-lists',
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ export function CampaignsPage() {
 
       const response =
         await axios.get(
-          "http://localhost:5000/api/templates",
+          '${import.meta.env.VITE_API_URL}/api/templates',
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -124,7 +124,7 @@ export function CampaignsPage() {
         );
 
       await axios.post(
-        "http://localhost:5000/api/campaigns",
+        '${import.meta.env.VITE_API_URL}/api/campaigns',
         formData,
         {
           headers: {
@@ -166,7 +166,7 @@ export function CampaignsPage() {
         );
 
       await axios.post(
-        `http://localhost:5000/api/campaigns/${id}/send`,
+        '${import.meta.env.VITE_API_URL}/api/campaigns/${id}/send',
         {},
         {
           headers: {
@@ -199,7 +199,7 @@ export function CampaignsPage() {
         );
 
       await axios.delete(
-        `http://localhost:5000/api/campaigns/${id}`,
+        '${import.meta.env.VITE_API_URL}/api/campaigns/${id}',
         {
           headers: {
             Authorization: `Bearer ${token}`,
