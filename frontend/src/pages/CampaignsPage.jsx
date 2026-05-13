@@ -45,7 +45,7 @@ export function CampaignsPage() {
 
       const response =
         await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/campaigns",
+          '${import.meta.env.VITE_API_URL}/api/campaigns',
           {
             headers: {
               Authorization: `Bearer ${token}`,
