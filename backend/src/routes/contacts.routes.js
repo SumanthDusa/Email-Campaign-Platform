@@ -35,54 +35,6 @@ router.post(
   importContactsFromCsv
 );
 
-router.post(
-  "/",
-  async (req, res) => {
-    try {
-      const {
-        name,
-        description,
-        contacts,
-      } = req.body;
-
-      const list =
-        await prisma.contactList.create(
-          {
-            data: {
-              name,
-              description,
-
-              userId:
-                req.user.sub,
-
-              members: {
-                create:
-                  contacts.map(
-                    (
-                      contactId
-                    ) => ({
-                      contactId,
-                    })
-                  ),
-              },
-            },
-          }
-        );
-
-      res.status(201).json(
-        list
-      );
-    } catch (error) {
-      console.log(error);
-
-      res.status(500).json({
-        message:
-          "Failed to create list",
-      });
-    }
-  }
-);
-
 router.delete(
   "/:id",
   deleteContact
