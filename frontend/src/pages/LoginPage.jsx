@@ -162,26 +162,7 @@ export function LoginPage() {
               : "Login"}
           </button>
         </div>
-
-        <p
-          style={{
-            marginTop: "24px",
-            textAlign:
-              "center",
-          }}
-        >
-          Don’t have an
-          account?{" "}
-          <Link
-            to="/register"
-            style={{
-              color:
-                "#818cf8",
-            }}
-          >
-            Register
-          </Link>
-        </p>
+        
       </form>
     </div>
   );
