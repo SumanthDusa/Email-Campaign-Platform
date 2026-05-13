@@ -34,7 +34,7 @@ export function LoginPage() {
 
       const response =
         await axios.post(
-          "http://localhost:5000/api/auth/login",
+          `${import.meta.env.VITE_API_URL}/api/auth/login`,
           formData
         );
 
@@ -163,25 +163,6 @@ export function LoginPage() {
           </button>
         </div>
 
-        <p
-          style={{
-            marginTop: "24px",
-            textAlign:
-              "center",
-          }}
-        >
-          Don’t have an
-          account?{" "}
-          <Link
-            to="/register"
-            style={{
-              color:
-                "#818cf8",
-            }}
-          >
-            Register
-          </Link>
-        </p>
       </form>
     </div>
   );
