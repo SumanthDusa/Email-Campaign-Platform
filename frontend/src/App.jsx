@@ -13,6 +13,7 @@ import { TemplatesPage } from "./pages/TemplatesPage";
 import { CampaignsPage } from "./pages/CampaignsPage";
 import { AnalyticsPage } from "./pages/AnalyticsPage";
 import { ContactListsPage } from "./pages/ContactListsPage";
+
 function ProtectedRoute({ children }) {
   const token =
     localStorage.getItem("token");
@@ -33,8 +34,8 @@ function App() {
   return (
     <>
       <Toaster position="top-right" />
-      
-      </Routes>
+
+      <Routes>
         <Route
           path="/login"
           element={<LoginPage />}
@@ -70,7 +71,11 @@ function App() {
 
         <Route
           path="/templates"
-          element={<TemplatesPage />}
+          element={
+            <ProtectedRoute>
+              <TemplatesPage />
+            </ProtectedRoute>
+          }
         />
 
         <Route
@@ -93,7 +98,11 @@ function App() {
 
         <Route
           path="/contact-lists"
-          element={<ContactListsPage />}
+          element={
+            <ProtectedRoute>
+              <ContactListsPage />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </>
